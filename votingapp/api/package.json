@@ -1,0 +1,14 @@
+{
+  "name": "voting-app",
+  "version": "1.0.0",
+  "description": "Aplikacja do głosowania online",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
