@@ -1,0 +1,59 @@
+.createVoting {
+
+      .voting-app {
+        margin: 0;
+      }
+  
+      .user-info {
+        display: flex;
+        align-items: center;
+      }
+  
+      .back {
+        .backbutton {
+          background-color: transparent;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+            background-color: black;
+          }
+        }
+      }
+    }
+  
+    .main {
+      padding: 20px;
+      margin-top: 225px;
+  
+      .details {
+        .title-input,
+        .description-input {
+          padding: 10px;
+          margin-bottom: 10px;
+          width: 100%;
+        }
+      }
+  
+      .questions {
+        .questions-input {
+          padding: 10px;
+          margin-bottom: 10px;
+          width: 100%;
+        }
+      }
+  
+      .start {
+        .start {
+          height: 40px;
+          width: 100px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
