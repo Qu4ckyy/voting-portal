@@ -1,10 +1,13 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes");
 const votingRoutes = require("./routes/votingRoutes");
 
 app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/vote", votingRoutes);

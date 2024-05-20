@@ -11,6 +11,22 @@ const Register = () => {
     password: "",
   });
 
+  const registerUser = async (userData) => {
+    try {
+      const response = await fetch("http://localhost:3001/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      const data = await response.json();
+      console.log("User registered successfully:", data);
+    } catch (error) {
+      console.error("Error registering user:", error);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -75,7 +91,7 @@ const Register = () => {
             value={userData.password}
             onChange={handleChange}
           />
-          <button className="Sign" type="submit">
+          <button onClick={registerUser} className="Sign" type="submit">
             Sign in
           </button>
           <h2>Already have account?</h2>
