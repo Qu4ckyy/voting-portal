@@ -14,11 +14,14 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/register", {
-        username: userData.nickname,
-        email: userData.mail,
-        password: userData.password,
-      });
+      const response = await axios.post(
+        "http://localhost:3001/api/auth/register",
+        {
+          username: userData.nickname,
+          email: userData.mail,
+          password: userData.password,
+        }
+      );
       console.log("Registered:", response.data);
       navigate("/login");
     } catch (error) {
