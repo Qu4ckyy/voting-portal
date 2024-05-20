@@ -1,0 +1,82 @@
+body {
+  background-color: #141414;
+}
+
+.navbar {
+  background-color: #416136;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logout-btn {
+  padding: 5px 10px;
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.voting-app {
+  font-size: 24px;
+  margin: 0 auto;
+}
+
+.create {
+  border: 1px solid #ffff;
+}
+
+.join {
+  border: 1px solid #ffff
+}
+
+.list {
+  border: 1px solid #fff
+}
+
+.Main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 300px;
+}
+
+.Main > div {
+  margin: 0 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.Main h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.Main button {
+  display: flex;
+  text-align: center;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px ;
+}
+
+.Main img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
