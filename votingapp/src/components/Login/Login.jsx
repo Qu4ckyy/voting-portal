@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../../scss/Login.scss";
-import axios from "axios";
 
 const Login = () => {
   const [userData, setUserData] = useState({ email: "", password: "" });
@@ -13,17 +12,29 @@ const Login = () => {
   const loginFn = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/login", userData);
-      console.log("Logged in:", response.data);
-      window.location.href = "/";
+      const response = await fetch("http://localhost:3001/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Login successful:", data);
+        window.location.href = "/";
+      } else {
+        const errorData = await response.json();
+        console.error("Login failed:", errorData);
+        alert(errorData.message);
+      }
     } catch (error) {
-      console.error("Error logging in:", error);
+      console.error("Error:", error);
     }
   };
 
   const handleRegisterClick = () => {
     window.location.href = "/Register";
-    console.log("Handle register click...");
   };
 
   return (
@@ -42,7 +53,7 @@ const Login = () => {
           <input
             className="password-input"
             type="password"
-            placeholder="Hasło"
+            placeholder="Password"
             name="password"
             value={userData.password}
             onChange={handleChange}

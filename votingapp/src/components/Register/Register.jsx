@@ -30,18 +30,24 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:3001/api/auth/register",
-        {
-          username: userData.nickname,
-          email: userData.mail,
-          password: userData.password,
-        }
-      );
-      console.log("Registered:", response.data);
-      navigate("/login");
+      const response = await fetch("http://localhost:3001/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Registration successful:", data);
+        navigate("/login");
+      } else {
+        const errorData = await response.json();
+        console.error("Registration failed:", errorData);
+        alert(errorData.message);
+      }
     } catch (error) {
-      console.error("Error registering:", error);
+      console.error("Error:", error);
     }
   };
 
